@@ -290,21 +290,21 @@ body {
 
 .gallery-scroll img {
   display: block !important;
-  flex: 0 0 155px !important;
+  flex: 0 0 310px !important;
 
-  width: 155px !important;
-  min-width: 155px !important;
-  max-width: 155px !important;
+  width: 310px !important;
+  min-width: 310px !important;
+  max-width: 310px !important;
 
-  height: 220px !important;
-  min-height: 220px !important;
-  max-height: 220px !important;
+  height: 430px !important;
+  min-height: 430px !important;
+  max-height: 430px !important;
 
   object-fit: cover !important;
   object-position: center !important;
 
   margin: 0 !important;
-  border-radius: 10px;
+  border-radius: 14px;
   scroll-snap-align: start;
 }
 
