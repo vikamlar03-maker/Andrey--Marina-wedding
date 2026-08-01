@@ -201,3 +201,23 @@ body {
     font-size: 17px;
   }
 }
+/* ===== ФОТО ПІСЛЯ ЗАСТАВКИ ===== */
+
+.photo-block{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:0;
+    margin:0;
+    overflow:hidden;
+    background:#160708;
+}
+
+.photo-block img{
+    display:block;
+    width:100%;
+    max-width:430px;
+    height:auto;
+    object-fit:contain;
+}
