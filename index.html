@@ -67,15 +67,197 @@
 
 
   <!-- ОСНОВНА СТОРІНКА -->
-  <main id="mainPage" class="main-page">
+ <main id="mainPage" class="main-page">
 
-    <section class="first-photo">
-      <img src="Foto1.PNG" alt="Андрій та Марина">
-    </section>
+  <!-- ФОТО 1 -->
+  <section class="photo-block">
+    <img src="Foto1.PNG" alt="Андрій та Марина">
+  </section>
 
-  </main>
+  <!-- ФОТО 2 -->
+  <section class="photo-block">
+    <img src="Foto2.PNG" alt="Запрошення">
+  </section>
 
+  <!-- ФОТО 3 -->
+  <section class="photo-block">
+    <img src="Foto3.PNG" alt="Дата весілля">
+  </section>
 
+  <!-- ГОРИЗОНТАЛЬНА ГАЛЕРЕЯ -->
+  <section class="gallery-block">
+
+    <div class="gallery-scroll">
+      <img src="Galerie1.JPG" alt="Фото 1">
+      <img src="Galerie2.JPG" alt="Фото 2">
+      <img src="Galerie3.JPG" alt="Фото 3">
+      <img src="Galerie4.JPG" alt="Фото 4">
+      <img src="Galerie5.JPG" alt="Фото 5">
+    </div>
+
+  </section>
+
+  <!-- ФОТО 4 -->
+  <section class="photo-block">
+    <img src="Foto4.PNG" alt="Таймінг весільного дня">
+  </section>
+
+  <!-- АДРЕС -->
+  <section class="address-block">
+
+    <p class="section-small-title">
+      Місце проведення
+    </p>
+
+    <h2>
+      Чекаємо на вас
+    </h2>
+
+    <p>
+      Натисніть нижче, щоб відкрити точну адресу
+      та прокласти маршрут.
+    </p>
+
+    <a
+      href="https://maps.app.goo.gl/Sd3XZcyPm9kY6jsG8?g_st=ic"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Відкрити адресу в Google Maps
+    </a>
+
+  </section>
+
+  <!-- ФОТО 5 -->
+  <section class="photo-block">
+    <img src="Foto5.PNG" alt="Інформація для гостей">
+  </section>
+
+  <!-- ТАЙМЕР -->
+  <section class="timer-block">
+
+    <div class="timer-photo">
+      <img src="Timing.PNG" alt="До весілля залишилося">
+
+      <div class="timer-content">
+        <p class="timer-title">
+          До нашого весілля залишилося
+        </p>
+
+        <div class="timer-numbers">
+
+          <div>
+            <span id="days">00</span>
+            <small>днів</small>
+          </div>
+
+          <div>
+            <span id="hours">00</span>
+            <small>годин</small>
+          </div>
+
+          <div>
+            <span id="minutes">00</span>
+            <small>хвилин</small>
+          </div>
+
+          <div>
+            <span id="seconds">00</span>
+            <small>секунд</small>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- АНКЕТА -->
+  <section class="rsvp-block">
+
+    <p class="section-small-title">
+      Підтвердження присутності
+    </p>
+
+    <h2>
+      Анкета гостя
+    </h2>
+
+    <form id="guestForm">
+
+      <input
+        type="text"
+        id="guestName"
+        placeholder="Ваше ім’я"
+        required
+      >
+
+      <div class="attendance-options">
+
+        <label>
+          <input
+            type="radio"
+            name="attendance"
+            value="Так"
+            required
+          >
+          Так
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="attendance"
+            value="Ні"
+          >
+          Ні
+        </label>
+
+      </div>
+
+      <input
+        type="number"
+        id="guestCount"
+        min="1"
+        max="10"
+        placeholder="Кількість гостей"
+      >
+
+      <textarea
+        id="guestComment"
+        placeholder="Коментар або побажання"
+      ></textarea>
+
+      <button type="submit">
+        Відправити
+      </button>
+
+    </form>
+
+    <div id="thankYouMessage" hidden>
+      Дякуємо за вашу відповідь! 🤍
+    </div>
+
+  </section>
+
+  <!-- TELEGRAM -->
+  <section class="telegram-block">
+
+    <h2>
+      Загальна група
+    </h2>
+
+    <a
+      href="https://t.me/+h1ikJGxCpCExYWNi"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Перейти в Telegram
+    </a>
+
+  </section>
+
+</main>
   <script>
   const intro = document.getElementById("intro");
   const mainPage = document.getElementById("mainPage");
