@@ -229,3 +229,33 @@ body {
     object-fit:contain;
     border-radius:0;
 }
+/* ===== ГОРИЗОНТАЛЬНА ГАЛЕРЕЯ ===== */
+
+.gallery-block{
+    width:100%;
+    overflow:hidden;
+    padding:12px 0;
+    background:#160708;
+}
+
+.gallery-scroll{
+    display:flex;
+    overflow-x:auto;
+    gap:12px;
+    padding:0 16px;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+}
+
+.gallery-scroll::-webkit-scrollbar{
+    display:none;
+}
+
+.gallery-scroll img{
+    flex:0 0 auto;
+    width:170px;
+    height:240px;
+    object-fit:cover;
+    border-radius:14px;
+    scroll-snap-align:center;
+}
