@@ -15,7 +15,7 @@
 
 <body>
 
-  <!-- ПЕРША ЗАСТАВКА -->
+  <!-- ЗАСТАВКА -->
   <section id="intro" class="intro">
 
     <video
@@ -67,222 +67,303 @@
 
 
   <!-- ОСНОВНА СТОРІНКА -->
- <main id="mainPage" class="main-page">
+  <main id="mainPage" class="main-page">
 
-  <!-- ФОТО 1 -->
-  <section class="photo-block">
-    <img src="Foto1.PNG" alt="Андрій та Марина">
-  </section>
+    <section class="photo-block">
+      <img src="Foto1.PNG" alt="Андрій та Марина">
+    </section>
 
-  <!-- ФОТО 2 -->
-  <section class="photo-block">
-    <img src="Foto2.PNG" alt="Запрошення">
-  </section>
+    <section class="photo-block">
+      <img src="Foto2.PNG" alt="Запрошення">
+    </section>
 
-  <!-- ФОТО 3 -->
-  <section class="photo-block">
-    <img src="Foto3.PNG" alt="Дата весілля">
-  </section>
+    <section class="photo-block">
+      <img src="Foto3.PNG" alt="Дата весілля">
+    </section>
 
-  <!-- ГОРИЗОНТАЛЬНА ГАЛЕРЕЯ -->
-  <section class="gallery-block">
 
-    <div class="gallery-scroll">
-      <img src="Galerie1.JPG" alt="Фото 1">
-      <img src="Galerie2.JPG" alt="Фото 2">
-      <img src="Galerie3.JPG" alt="Фото 3">
-      <img src="Galerie4.JPG" alt="Фото 4">
-      <img src="Galerie5.JPG" alt="Фото 5">
-    </div>
+    <!-- ГАЛЕРЕЯ -->
+    <section class="gallery-block">
 
-  </section>
+      <div class="gallery-scroll">
+        <img src="Galerie1.JPG" alt="Фото 1">
+        <img src="Galerie2.JPG" alt="Фото 2">
+        <img src="Galerie3.JPG" alt="Фото 3">
+        <img src="Galerie4.JPG" alt="Фото 4">
+        <img src="Galerie5.JPG" alt="Фото 5">
+      </div>
 
-  <!-- ФОТО 4 -->
-  <section class="photo-block">
-    <img src="Foto4.PNG" alt="Таймінг весільного дня">
-  </section>
+    </section>
 
-  <!-- АДРЕС -->
-  <section class="address-block">
 
-    <p class="section-small-title">
-      Місце проведення
-    </p>
+    <section class="photo-block">
+      <img src="Foto4.PNG" alt="Таймінг весільного дня">
+    </section>
 
-    <h2>
-      Чекаємо на вас
-    </h2>
 
-    <p>
-      Натисніть нижче, щоб відкрити точну адресу
-      та прокласти маршрут.
-    </p>
+    <!-- АДРЕС -->
+    <section class="address-block">
 
-    <a
-      href="https://maps.app.goo.gl/Sd3XZcyPm9kY6jsG8?g_st=ic"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Відкрити адресу в Google Maps
-    </a>
+      <p class="section-small-title">
+        Місце проведення
+      </p>
 
-  </section>
+      <h2>
+        Чекаємо на вас
+      </h2>
 
-  <!-- ФОТО 5 -->
-  <section class="photo-block">
-    <img src="Foto5.PNG" alt="Інформація для гостей">
-  </section>
+      <p>
+        Натисніть нижче, щоб відкрити точну адресу
+        та прокласти маршрут.
+      </p>
 
-  <!-- ТАЙМЕР -->
-  <section class="timer-block">
+      <a
+        href="https://maps.app.goo.gl/Sd3XZcyPm9kY6jsG8?g_st=ic"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Відкрити адресу в Google Maps
+      </a>
 
-    <div class="timer-photo">
-      <img src="Timing.PNG" alt="До весілля залишилося">
+    </section>
 
-      <div class="timer-content">
-        <p class="timer-title">
-          До нашого весілля залишилося
-        </p>
 
-        <div class="timer-numbers">
+    <section class="photo-block">
+      <img src="Foto5.PNG" alt="Інформація для гостей">
+    </section>
 
-          <div>
-            <span id="days">00</span>
-            <small>днів</small>
-          </div>
 
-          <div>
-            <span id="hours">00</span>
-            <small>годин</small>
-          </div>
+    <!-- ТАЙМЕР -->
+    <section class="timer-block">
 
-          <div>
-            <span id="minutes">00</span>
-            <small>хвилин</small>
-          </div>
+      <div class="timer-photo">
 
-          <div>
-            <span id="seconds">00</span>
-            <small>секунд</small>
+        <img src="Timing.PNG" alt="До весілля залишилося">
+
+        <div class="timer-content">
+
+          <p class="timer-title">
+            До нашого весілля залишилося
+          </p>
+
+          <div class="timer-numbers">
+
+            <div>
+              <span id="days">00</span>
+              <small>днів</small>
+            </div>
+
+            <div>
+              <span id="hours">00</span>
+              <small>годин</small>
+            </div>
+
+            <div>
+              <span id="minutes">00</span>
+              <small>хвилин</small>
+            </div>
+
+            <div>
+              <span id="seconds">00</span>
+              <small>секунд</small>
+            </div>
+
           </div>
 
         </div>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- АНКЕТА -->
-  <section class="rsvp-block">
-
-    <p class="section-small-title">
-      Підтвердження присутності
-    </p>
-
-    <h2>
-      Анкета гостя
-    </h2>
-
-    <form id="guestForm">
-
-      <input
-        type="text"
-        id="guestName"
-        placeholder="Ваше ім’я"
-        required
-      >
-
-      <div class="attendance-options">
-
-        <label>
-          <input
-            type="radio"
-            name="attendance"
-            value="Так"
-            required
-          >
-          Так
-        </label>
-
-        <label>
-          <input
-            type="radio"
-            name="attendance"
-            value="Ні"
-          >
-          Ні
-        </label>
 
       </div>
 
-      <input
-        type="number"
-        id="guestCount"
-        min="1"
-        max="10"
-        placeholder="Кількість гостей"
+    </section>
+
+
+    <!-- АНКЕТА -->
+    <section class="rsvp-block">
+
+      <p class="section-small-title">
+        Підтвердження присутності
+      </p>
+
+      <h2>
+        Анкета гостя
+      </h2>
+
+      <form id="guestForm">
+
+        <input
+          type="text"
+          id="guestName"
+          placeholder="Ваше ім’я"
+          required
+        >
+
+        <div class="attendance-options">
+
+          <label>
+            <input
+              type="radio"
+              name="attendance"
+              value="Так"
+              required
+            >
+            Так
+          </label>
+
+          <label>
+            <input
+              type="radio"
+              name="attendance"
+              value="Ні"
+            >
+            Ні
+          </label>
+
+        </div>
+
+        <input
+          type="number"
+          id="guestCount"
+          min="1"
+          max="10"
+          placeholder="Кількість гостей"
+        >
+
+        <textarea
+          id="guestComment"
+          placeholder="Коментар або побажання"
+        ></textarea>
+
+        <button type="submit">
+          Відправити
+        </button>
+
+      </form>
+
+      <div id="thankYouMessage" hidden>
+        Дякуємо за вашу відповідь! 🤍
+      </div>
+
+    </section>
+
+
+    <!-- TELEGRAM -->
+    <section class="telegram-block">
+
+      <h2>
+        Загальна група
+      </h2>
+
+      <a
+        href="https://t.me/+h1ikJGxCpCExYWNi"
+        target="_blank"
+        rel="noopener noreferrer"
       >
+        Перейти в Telegram
+      </a>
 
-      <textarea
-        id="guestComment"
-        placeholder="Коментар або побажання"
-      ></textarea>
+    </section>
 
-      <button type="submit">
-        Відправити
-      </button>
+  </main>
 
-    </form>
 
-    <div id="thankYouMessage" hidden>
-      Дякуємо за вашу відповідь! 🤍
-    </div>
-
-  </section>
-
-  <!-- TELEGRAM -->
-  <section class="telegram-block">
-
-    <h2>
-      Загальна група
-    </h2>
-
-    <a
-      href="https://t.me/+h1ikJGxCpCExYWNi"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Перейти в Telegram
-    </a>
-
-  </section>
-
-</main>
   <script>
-  const intro = document.getElementById("intro");
-  const mainPage = document.getElementById("mainPage");
-  const music = document.getElementById("weddingMusic");
+    document.addEventListener("DOMContentLoaded", function () {
+      const intro = document.getElementById("intro");
+      const mainPage = document.getElementById("mainPage");
+      const music = document.getElementById("weddingMusic");
+      const openButton = document.getElementById("openInvitation");
+      const guestForm = document.getElementById("guestForm");
+      const thankYouMessage = document.getElementById("thankYouMessage");
 
-  function openInvitation() {
-    music.play().catch(() => {});
+      let opened = false;
 
-    intro.style.transition =
-      "opacity 1.2s ease, filter 1.2s ease, transform 1.2s ease";
+      function openInvitation() {
+        if (opened) return;
+        opened = true;
 
-    intro.style.opacity = "0";
-    intro.style.filter = "blur(18px)";
-    intro.style.transform = "scale(1.04)";
+        music.play().catch(function () {});
 
-    setTimeout(() => {
-      intro.style.display = "none";
-      mainPage.style.display = "block";
-      window.scrollTo(0, 0);
-    }, 1200);
-  }
+        mainPage.style.display = "block";
+        mainPage.style.opacity = "0";
+        mainPage.style.transform = "translateY(18px)";
 
-  intro.addEventListener("click", openInvitation);
-  intro.addEventListener("touchend", openInvitation);
-</script>
+        document.body.style.overflow = "auto";
+        document.documentElement.style.overflow = "auto";
+
+        requestAnimationFrame(function () {
+          mainPage.style.transition =
+            "opacity 1.6s ease, transform 1.6s ease";
+
+          mainPage.style.opacity = "1";
+          mainPage.style.transform = "translateY(0)";
+        });
+
+        intro.style.transition =
+          "opacity 1.8s ease, filter 1.8s ease, transform 1.8s ease";
+
+        intro.style.opacity = "0";
+        intro.style.filter = "blur(22px)";
+        intro.style.transform = "scale(1.03)";
+        intro.style.pointerEvents = "none";
+
+        setTimeout(function () {
+          intro.style.display = "none";
+          window.scrollTo(0, 0);
+        }, 1800);
+      }
+
+      openButton.addEventListener("click", openInvitation);
+      intro.addEventListener("click", openInvitation);
+
+      const weddingDate = new Date("2026-10-10T11:00:00");
+
+      function updateCountdown() {
+        const now = new Date();
+        const difference = weddingDate - now;
+
+        if (difference <= 0) {
+          document.getElementById("days").textContent = "00";
+          document.getElementById("hours").textContent = "00";
+          document.getElementById("minutes").textContent = "00";
+          document.getElementById("seconds").textContent = "00";
+          return;
+        }
+
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (difference / (1000 * 60 * 60)) % 24
+        );
+        const minutes = Math.floor(
+          (difference / (1000 * 60)) % 60
+        );
+        const seconds = Math.floor(
+          (difference / 1000) % 60
+        );
+
+        document.getElementById("days").textContent =
+          String(days).padStart(2, "0");
+
+        document.getElementById("hours").textContent =
+          String(hours).padStart(2, "0");
+
+        document.getElementById("minutes").textContent =
+          String(minutes).padStart(2, "0");
+
+        document.getElementById("seconds").textContent =
+          String(seconds).padStart(2, "0");
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+
+      guestForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        guestForm.style.display = "none";
+        thankYouMessage.hidden = false;
+      });
+    });
+  </script>
 
 </body>
 </html>
