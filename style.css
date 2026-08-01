@@ -1,1 +1,203 @@
-/* Wedding styles */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  background: #160708;
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* ПЕРША ЗАСТАВКА */
+.intro {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  z-index: 1000;
+  background: #160708;
+}
+
+/* ВІДЕО НА ВЕСЬ ЕКРАН */
+.intro-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  /* Центр відео */
+  object-position: center center;
+
+  /* Легке затемнення самого відео */
+  filter: brightness(0.62) saturate(0.85);
+}
+
+/* М’ЯКИЙ ТЕМНИЙ ШАР */
+.intro-shade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(20, 4, 6, 0.18) 0%,
+      rgba(20, 4, 6, 0.28) 45%,
+      rgba(20, 4, 6, 0.55) 100%
+    );
+}
+
+/* ТЕКСТ ПОВЕРХ ВІДЕО */
+.intro-content {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  height: 100%;
+
+  padding:
+    max(70px, env(safe-area-inset-top))
+    28px
+    max(45px, env(safe-area-inset-bottom));
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  color: #f8f1e8;
+}
+
+/* A | M */
+.monogram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+
+  margin-bottom: 34px;
+
+  font-size: clamp(64px, 19vw, 92px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+.monogram i {
+  display: block;
+  width: 1px;
+  height: 105px;
+  background: rgba(248, 241, 232, 0.92);
+}
+
+/* БІБЛІЙНИЙ ТЕКСТ */
+.bible-text {
+  max-width: 340px;
+
+  font-size: clamp(20px, 5.7vw, 28px);
+  font-weight: 400;
+  line-height: 1.42;
+  letter-spacing: 0.1px;
+
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65);
+}
+
+.bible-reference {
+  margin-top: 23px;
+
+  font-size: clamp(19px, 5.2vw, 25px);
+  line-height: 1.2;
+
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65);
+}
+
+/* КНОПКА ВНИЗУ */
+.open-button {
+  position: absolute;
+  left: 50%;
+  bottom: max(34px, env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+
+  width: 260px;
+  max-width: calc(100% - 50px);
+
+  border: 0;
+  background: transparent;
+  color: #f8f1e8;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 19px;
+  line-height: 1.25;
+  letter-spacing: 0.3px;
+
+  cursor: pointer;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.open-button::after {
+  content: "⌄";
+  display: block;
+  margin-top: 7px;
+
+  font-family: Georgia, serif;
+  font-size: 25px;
+  line-height: 1;
+}
+
+/* ОСНОВНА СТОРІНКА ПОКИ ПРИХОВАНА */
+.main-page {
+  display: none;
+  width: 100%;
+  background: #160708;
+}
+
+.first-photo {
+  width: 100%;
+  line-height: 0;
+}
+
+.first-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* МАЛЕНЬКІ ЕКРАНИ */
+@media (max-height: 700px) {
+  .monogram {
+    margin-bottom: 22px;
+    font-size: 62px;
+  }
+
+  .monogram i {
+    height: 82px;
+  }
+
+  .bible-text {
+    font-size: 19px;
+    line-height: 1.3;
+  }
+
+  .bible-reference {
+    margin-top: 15px;
+    font-size: 18px;
+  }
+
+  .open-button {
+    bottom: 20px;
+    font-size: 17px;
+  }
+}
