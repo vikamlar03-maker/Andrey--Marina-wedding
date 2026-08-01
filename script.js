@@ -15,19 +15,34 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log("Браузер не дозволив автоматично запустити музику.");
     });
 
-    // Плавне розмиття та зникнення заставки
-    intro.style.transition =
-      "opacity 1.3s ease, filter 1.3s ease, transform 1.3s ease";
+    /* ПЛАВНИЙ ПЕРЕХІД ІЗ ЗАСТАВКИ */
+.intro {
+  transition:
+    opacity 1.8s ease,
+    filter 1.8s ease,
+    transform 1.8s ease;
+}
 
-    intro.style.opacity = "0";
-    intro.style.filter = "blur(18px)";
-    intro.style.transform = "scale(1.04)";
+.intro.is-closing {
+  opacity: 0;
+  filter: blur(22px);
+  transform: scale(1.03);
+  pointer-events: none;
+}
 
-    if (introVideo) {
-      introVideo.style.transition = "filter 1.3s ease";
-      introVideo.style.filter = "blur(14px) brightness(0.45)";
-    }
+.main-page {
+  display: block;
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 1.4s ease,
+    transform 1.4s ease;
+}
 
+.main-page.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
     // Показуємо основну сторінку
     setTimeout(function () {
       intro.style.display = "none";
