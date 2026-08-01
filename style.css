@@ -214,10 +214,18 @@ body {
     background:#160708;
 }
 
-.photo-block img{
-    display:block;
+.photo-block{
     width:100%;
-    max-width:430px;
+    display:flex;
+    justify-content:center;
+    margin:0;
+    padding:10px 0;
+}
+
+.photo-block img{
+    width:min(100%,480px);
     height:auto;
+    display:block;
     object-fit:contain;
+    border-radius:0;
 }
