@@ -363,3 +363,48 @@ body {
 .gallery-scroll::-webkit-scrollbar {
   display: none;
 }
+/* ПРИБИРАЄМО БІЛІ РОЗРИВИ МІЖ ОСНОВНИМИ ФОТО */
+
+.photo-block {
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 0;
+  background: #160708 !important;
+}
+
+.photo-block img {
+  display: block;
+  margin: 0 auto !important;
+  vertical-align: top;
+}
+
+.main-page {
+  gap: 0 !important;
+  background: #160708 !important;
+}
+
+/* РОБИМО ФОТО В ГАЛЕРЕЇ БІЛЬШИМИ */
+
+.gallery-block {
+  padding: 14px 0 18px !important;
+}
+
+.gallery-scroll {
+  gap: 12px !important;
+  padding: 0 14px 8px !important;
+}
+
+.gallery-scroll img {
+  flex: 0 0 245px !important;
+
+  width: 245px !important;
+  min-width: 245px !important;
+  max-width: 245px !important;
+
+  height: 350px !important;
+  min-height: 350px !important;
+  max-height: 350px !important;
+
+  object-fit: cover !important;
+  border-radius: 14px !important;
+}
