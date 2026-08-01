@@ -76,7 +76,31 @@
   </main>
 
 
-  <script src="script.js"></script>
+  <script>
+  const intro = document.getElementById("intro");
+  const mainPage = document.getElementById("mainPage");
+  const music = document.getElementById("weddingMusic");
+
+  function openInvitation() {
+    music.play().catch(() => {});
+
+    intro.style.transition =
+      "opacity 1.2s ease, filter 1.2s ease, transform 1.2s ease";
+
+    intro.style.opacity = "0";
+    intro.style.filter = "blur(18px)";
+    intro.style.transform = "scale(1.04)";
+
+    setTimeout(() => {
+      intro.style.display = "none";
+      mainPage.style.display = "block";
+      window.scrollTo(0, 0);
+    }, 1200);
+  }
+
+  intro.addEventListener("click", openInvitation);
+  intro.addEventListener("touchend", openInvitation);
+</script>
 
 </body>
 </html>
