@@ -1,3 +1,340 @@
 <!DOCTYPE html>
-<html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <title>Андрій & Марина</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ПЕРША ЗАСТАВКА -->
+  <section id="intro" class="intro">
+
+    <video
+      id="introVideo"
+      class="intro-video"
+      autoplay
+      muted
+      loop
+      playsinline
+    >
+      <source src="Fone.mov" type="video/quicktime">
+      <source src="Fone.mov" type="video/mp4">
+    </video>
+
+    <div class="intro-darkness"></div>
+
+    <div class="intro-content">
+      <div class="monogram">
+        <span>A</span>
+        <span class="monogram-line"></span>
+        <span>M</span>
+      </div>
+
+      <p class="bible-text">
+        А над усім цим — любов,<br>
+        вона єднає все в досконалість.
+      </p>
+
+      <p class="bible-reference">
+        Колосян 3:14
+      </p>
+
+      <button id="openInvitation" class="open-button" type="button">
+        Відкрити запрошення
+      </button>
+    </div>
+
+  </section>
+
+
+  <!-- МУЗИКА -->
+  <audio id="weddingMusic" loop preload="auto">
+    <source src="Musik.m4a" type="audio/mp4">
+  </audio>
+
+  <button
+    id="musicButton"
+    class="music-button"
+    type="button"
+    aria-label="Увімкнути або вимкнути музику"
+  >
+    ♫
+  </button>
+
+
+  <!-- ОСНОВНЕ ЗАПРОШЕННЯ -->
+  <main id="invitation" class="invitation">
+
+    <!-- ФОТО 1 -->
+    <section class="image-section reveal">
+      <img src="Foto1.PNG" alt="Андрій та Марина">
+    </section>
+
+    <!-- ФОТО 2 -->
+    <section class="image-section reveal">
+      <img src="Foto2.PNG" alt="Запрошення на весілля">
+    </section>
+
+    <!-- ФОТО 3 -->
+    <section class="image-section reveal">
+      <img src="Foto3.PNG" alt="Дата весілля">
+    </section>
+
+
+    <!-- ГАЛЕРЕЯ -->
+    <section class="gallery-section reveal">
+
+      <div class="gallery-title">
+        <p>Наша історія</p>
+      </div>
+
+      <div class="gallery">
+        <img src="Galerie1.JPG" alt="Фотографія Андрія та Марини 1">
+        <img src="Galerie2.JPG" alt="Фотографія Андрія та Марини 2">
+        <img src="Galerie3.JPG" alt="Фотографія Андрія та Марини 3">
+        <img src="Galerie4.JPG" alt="Фотографія Андрія та Марини 4">
+        <img src="Galerie5.JPG" alt="Фотографія Андрія та Марини 5">
+      </div>
+
+    </section>
+
+
+    <!-- ФОТО 4 -->
+    <section class="image-section reveal">
+      <img src="Foto4.PNG" alt="Програма весільного дня">
+    </section>
+
+
+    <!-- АДРЕС -->
+    <section class="location-section reveal">
+
+      <p class="small-heading">
+        Місце проведення
+      </p>
+
+      <h2>
+        Будемо раді зустріти вас
+      </h2>
+
+      <p class="location-text">
+        Натисніть на кнопку, щоб відкрити точну адресу
+        та прокласти маршрут у Google Maps.
+      </p>
+
+      <a
+        class="location-button"
+        href="https://maps.app.goo.gl/Sd3XZcyPm9kY6jsG8?g_st=ic"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Відкрити адресу на карті
+      </a>
+
+    </section>
+
+
+    <!-- ФОТО 5 -->
+    <section class="image-section reveal">
+      <img src="Foto5.PNG" alt="Інформація для гостей">
+    </section>
+
+
+    <!-- ТАЙМЕР ПОВЕРХ ФОТО -->
+    <section class="countdown-section reveal">
+
+      <img
+        class="countdown-background"
+        src="Timing.PNG"
+        alt="До весілля залишилося"
+      >
+
+      <div class="countdown-overlay">
+
+        <p class="countdown-word">
+          TIMING
+        </p>
+
+        <h2>
+          До нашого весілля залишилося
+        </h2>
+
+        <div id="countdown" class="countdown">
+
+          <div class="countdown-item">
+            <span id="days">00</span>
+            <small>днів</small>
+          </div>
+
+          <div class="countdown-item">
+            <span id="hours">00</span>
+            <small>годин</small>
+          </div>
+
+          <div class="countdown-item">
+            <span id="minutes">00</span>
+            <small>хвилин</small>
+          </div>
+
+          <div class="countdown-item">
+            <span id="seconds">00</span>
+            <small>секунд</small>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- АНКЕТА ГОСТЯ -->
+    <section class="rsvp-section reveal">
+
+      <p class="small-heading">
+        Підтвердження присутності
+      </p>
+
+      <h2>
+        Будь ласка, дайте нам відповідь
+      </h2>
+
+      <p class="rsvp-description">
+        Заповніть невелику анкету, щоб ми могли
+        краще підготуватися до нашого особливого дня.
+      </p>
+
+      <form id="guestForm" class="guest-form">
+
+        <label for="guestName">
+          Ваше ім’я та прізвище
+        </label>
+
+        <input
+          id="guestName"
+          name="guestName"
+          type="text"
+          placeholder="Введіть ваше ім’я"
+          required
+        >
+
+
+        <fieldset>
+          <legend>Чи зможете ви бути присутніми?</legend>
+
+          <label class="radio-line">
+            <input
+              type="radio"
+              name="attendance"
+              value="Так, буду"
+              required
+            >
+            Так, із радістю буду
+          </label>
+
+          <label class="radio-line">
+            <input
+              type="radio"
+              name="attendance"
+              value="На жаль, не зможу"
+            >
+            На жаль, не зможу
+          </label>
+        </fieldset>
+
+
+        <label for="guestCount">
+          Кількість гостей
+        </label>
+
+        <select id="guestCount" name="guestCount">
+          <option value="1">1 гість</option>
+          <option value="2">2 гості</option>
+          <option value="3">3 гості</option>
+          <option value="4">4 гості</option>
+          <option value="5">5 гостей</option>
+        </select>
+
+
+        <label for="guestComment">
+          Коментар або побажання
+        </label>
+
+        <textarea
+          id="guestComment"
+          name="guestComment"
+          rows="4"
+          placeholder="Напишіть тут, якщо бажаєте"
+        ></textarea>
+
+
+        <button class="submit-button" type="submit">
+          Надіслати відповідь
+        </button>
+
+      </form>
+
+
+      <div id="thankYouMessage" class="thank-you-message" hidden>
+        <h3>Дякуємо за вашу відповідь! 🤍</h3>
+
+        <p>
+          Ми отримали вашу анкету та будемо раді
+          розділити цей день разом із вами.
+        </p>
+      </div>
+
+    </section>
+
+
+    <!-- TELEGRAM-ГРУПА -->
+    <section class="telegram-section reveal">
+
+      <p>
+        Щоб не пропустити важливу інформацію,
+        приєднуйтеся до загальної групи гостей.
+      </p>
+
+      <a
+        class="telegram-button"
+        href="https://t.me/+h1ikJGxCpCExYWNi"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Приєднатися до загальної групи
+      </a>
+
+    </section>
+
+
+    <!-- ФІНАЛ -->
+    <footer class="wedding-footer reveal">
+      <div class="footer-monogram">
+        A <span>·</span> M
+      </div>
+
+      <p>
+        З любов’ю,<br>
+        Андрій та Марина
+      </p>
+
+      <strong>
+        10 жовтня 2026
+      </strong>
+    </footer>
+
+  </main>
+
+
+  <script src="script.js"></script>
+
+</body>
 </html>
