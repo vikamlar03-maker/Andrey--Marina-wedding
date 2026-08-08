@@ -609,3 +609,41 @@ body {
 
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
 }
+/* ===== ЕДИНЫЙ БАРХАТНЫЙ ФОН ВСЕГО САЙТА ===== */
+
+html,
+body {
+    background-color: #160708;
+}
+
+body {
+    background-image: url("IMG_2426.jpeg");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: repeat-y;
+    background-attachment: scroll;
+}
+
+/* Основная страница */
+.main-page {
+    background: transparent !important;
+}
+
+/* Все основные секции оставляем прозрачными,
+   чтобы через них был виден бархат */
+.main-page section,
+.photo-block,
+.gallery-section,
+.location-section,
+.timer-block,
+.rsvp-section {
+    background-color: transparent !important;
+}
+
+/* Если где-то раньше был прописан бордовый фон */
+.photo-block,
+.location-section,
+.timer-block,
+.rsvp-section {
+    background-image: none !important;
+}
