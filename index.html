@@ -178,72 +178,80 @@
 
 
     <!-- АНКЕТА -->
-    <section class="rsvp-block">
+   <section class="rsvp-block">
 
-      <p class="section-small-title">
-        Підтвердження присутності
-      </p>
+  <h2 class="rsvp-title">
+    Анкета гостя
+  </h2>
 
-      <h2>
-        Анкета гостя
-      </h2>
+  <form id="guestForm">
 
-      <form id="guestForm">
+    <input
+      type="text"
+      id="guestName"
+      placeholder="Ім’я"
+      required
+    >
 
+    <div class="attendance-options">
+
+      <label>
         <input
-          type="text"
-          id="guestName"
-          placeholder="Ваше ім’я"
+          type="radio"
+          name="attendance"
+          value="Так"
           required
         >
+        <span>Так</span>
+      </label>
 
-        <div class="attendance-options">
-
-          <label>
-            <input
-              type="radio"
-              name="attendance"
-              value="Так"
-              required
-            >
-            Так
-          </label>
-
-          <label>
-            <input
-              type="radio"
-              name="attendance"
-              value="Ні"
-            >
-            Ні
-          </label>
-
-        </div>
-
+      <label>
         <input
-          type="number"
-          id="guestCount"
-          min="1"
-          max="10"
-          placeholder="Кількість гостей"
+          type="radio"
+          name="attendance"
+          value="Ні"
         >
+        <span>Ні</span>
+      </label>
 
-        <textarea
-          id="guestComment"
-          placeholder="Коментар або побажання"
-        ></textarea>
+    </div>
 
-        <button type="submit">
-          Відправити
-        </button>
+    <input
+      type="number"
+      id="guestCount"
+      min="1"
+      max="10"
+      placeholder="Кількість"
+    >
 
-      </form>
+    <button type="submit">
+      Відправити
+    </button>
 
-      <div id="thankYouMessage" hidden>
-        Дякуємо за вашу відповідь! 🤍
-      </div>
+  </form>
 
-    </section>
+  <div id="thankYouMessage" hidden>
+    Дякуємо за вашу відповідь! 🤍
+  </div>
+
+</section>
+
+
+<section class="telegram-block">
+
+  <h2>
+    Загальна група
+  </h2>
+
+  <a
+    href="https://t.me/+h1ikJGxCpCExYWNi"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Перейти в Telegram
+  </a>
+
+</section>
 
 
     <!-- TELEGRAM -->
