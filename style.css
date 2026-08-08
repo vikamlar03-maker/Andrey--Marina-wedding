@@ -411,11 +411,11 @@ body {
 /* ===== ЕКРАН З АДРЕСОЮ ===== */
 
 .address-block {
-  width: 100%;
-  max-width: 430px;
-  min-height: 720px;
-  margin: 0 auto;
-  padding: 60px 22px;
+  min-height: auto !important;
+height: auto !important;
+padding: 28px 22px 30px !important;
+margin: 0 !important;
+  
 
   display: flex;
   flex-direction: column;
