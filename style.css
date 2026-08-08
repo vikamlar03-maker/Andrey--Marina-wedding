@@ -928,3 +928,129 @@ body {
 
   text-decoration: none;
 }
+/* =========================================
+   ФИНАЛЬНЫЕ ИСПРАВЛЕНИЯ НИЖНЕЙ ЧАСТИ
+========================================= */
+
+
+/* 1. УБИРАЕМ КРАСНЫЕ ЗАЗОРЫ МЕЖДУ БЛОКАМИ */
+
+.main-page,
+.timer-block,
+.rsvp-block,
+.telegram-block,
+.address-block,
+.gallery-block,
+.photo-block {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  border: none !important;
+}
+
+.timer-block {
+  padding: 0 !important;
+}
+
+.timer-photo {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+/* 2. ТАЙМЕР — ПОКАЗЫВАЕМ ВСЮ ВЕРТИКАЛЬНУЮ ФОТОГРАФИЮ */
+
+.timer-photo {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 430px !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+.timer-background {
+  display: block !important;
+
+  width: 100% !important;
+  height: auto !important;
+
+  min-height: 0 !important;
+  max-height: none !important;
+
+  object-fit: contain !important;
+  object-position: center center !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+/* ТЕКСТ ТАЙМЕРА ОСТАЁТСЯ ПОВЕРХ ФОТО */
+
+.timer-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+
+  z-index: 3 !important;
+
+  color: #ffffff !important;
+}
+
+.timer-title,
+.timer-item span,
+.timer-item small {
+  color: #ffffff !important;
+}
+
+
+/* 3. АНКЕТА — БЕЛЫЙ ТЕКСТ СНАРУЖИ ПОЛЕЙ */
+
+.rsvp-block {
+  background: transparent !important;
+
+  padding-top: 42px !important;
+  padding-bottom: 46px !important;
+
+  color: #ffffff !important;
+}
+
+.rsvp-title {
+  color: #ffffff !important;
+}
+
+.attendance-options label,
+.attendance-options label span {
+  color: #ffffff !important;
+}
+
+
+/* САМИ ПОЛЯ ОСТАЮТСЯ БЕЛЫМИ */
+
+#guestForm input[type="text"],
+#guestForm input[type="number"] {
+  background: #ffffff !important;
+  color: #2b201e !important;
+}
+
+#guestForm input::placeholder {
+  color: #aaa4a0 !important;
+}
+
+
+/* 4. TELEGRAM — БЕЗ ЛИШНИХ ОТСТУПОВ */
+
+.telegram-block {
+  padding-top: 34px !important;
+  padding-bottom: 50px !important;
+
+  background: transparent !important;
+}
+
+.telegram-block h2,
+.telegram-block a {
+  color: #ffffff !important;
+}
