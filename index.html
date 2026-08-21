@@ -355,10 +355,57 @@
       guestForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        guestForm.style.display = "none";
-        thankYouMessage.hidden = false;
-      });
+        guestForm.addEventListener("submit", async function (event) {
+  event.preventDefault();
+
+  const BOT_TOKEN = 8991521424:AAF3YnLhOdi2ntYTPy
+eKwUMV9oL2DCw-urE
+  const CHAT_ID = 1808023543;
+
+  const name = document.getElementById("guestName").value;
+
+  const attendance =
+    document.querySelector('input[name="attendance"]:checked')?.value || "Не вказано";
+
+  const count =
+    document.getElementById("guestCount").value || "Не вказано";
+
+  const message =
+`💍 Нова відповідь на весільну анкету
+
+👤 Ім’я: ${name}
+💌 Присутність: ${attendance}
+👥 Кількість гостей: ${count}`;
+
+  const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        chat_id: CHAT_ID,
+        text: message
+      })
     });
+
+    const result = await response.json();
+
+    if (!result.ok) {
+      throw new Error(result.description || "Telegram error");
+    }
+
+    guestForm.style.display = "none";
+    thankYouMessage.hidden = false;
+
+  } catch (error) {
+    console.error(error);
+
+    alert("Не вдалося відправити відповідь. Спробуйте ще раз.");
+  }
+});
   </script>
 
 </body>
