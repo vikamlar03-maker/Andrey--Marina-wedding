@@ -379,80 +379,53 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("thankYouMessage");
 
   if (guestForm) {
-    guestForm.addEventListener("submit", async function (event) {
-      event.preventDefault();
+     // Анкета → Telegram
+    const guestForm = document.getElementById('guestForm');
+    const submitNote = document.getElementById('submitNote');
 
-      const BOT_TOKEN = "8991521424:AAEFfeVtUygq77D302KSfgd0lxl1GGzZl18";
-      const CHAT_ID = "1808023543";
+    guestForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
 
-      const name =
-        document.getElementById("guestName").value.trim();
+      const name = document.getElementById('guestName').value.trim();
+      const count = document.getElementById('guestCount').value.trim();
+      const attendanceInput = document.querySelector('input[name="attendance"]:checked');
+      const attendance = attendanceInput ? attendanceInput.value : '';
 
-      const attendanceInput =
-        document.querySelector(
-          'input[name="attendance"]:checked'
-        );
-
-      const attendance = attendanceInput
-        ? attendanceInput.value
-        : "Не вказано";
-
-      const guestCountElement =
-        document.getElementById("guestCount");
-
-      const count =
-        guestCountElement && guestCountElement.value
-          ? guestCountElement.value
-          : "Не вказано";
-
-      const message = `💍 Нова відповідь на весільну анкету
-
-👤 Ім’я: ${name}
-💌 Присутність: ${attendance}
-👥 Кількість гостей: ${count}`;
-
-      const url =
-        "https://api.telegram.org/bot" +
-        BOT_TOKEN +
-        "/sendMessage";
+      const message =
+`Новая анкета
+Имя: ${name || '-'}
+Будет: ${attendance || '-'}
+Количество: ${count || '-'}`;
 
       try {
-        const response = await fetch(url, {
-          method: "POST",
+        await fetch('https://api.telegram.org/bot8516218775:AAFz39TECTa2LTRbWymgGjWJ6nu5n308VXM/sendMessage', {
+          method: 'POST',
           headers: {
-            "Content-Type": "application/json"
+            'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-            chat_id: CHAT_ID,
+            chat_id: '1808023543',
             text: message
           })
         });
 
-        const result = await response.json();
-
-        if (!result.ok) {
-          throw new Error(
-            result.description || "Telegram error"
-          );
-        }
-
-        guestForm.style.display = "none";
-
-        if (thankYouMessage) {
-          thankYouMessage.hidden = false;
-        }
-
-      } catch (error) {
-        console.error(error);
-
-        alert(
-          "Не вдалося відправити відповідь. Спробуйте ще раз."
-        );
+        submitNote.textContent = 'Дякую за вашу відповідь 💛';
+        guestForm.reset();
+      } catch (err) {
+        submitNote.textContent = 'Не удалось отправить ответ';
       }
     });
-  }
+    const faders = document.querySelectorAll('.fade');
 
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
 });
-</script>
+
+faders.forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
