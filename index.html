@@ -288,7 +288,6 @@ document.addEventListener("DOMContentLoaded", function () {
       requestAnimationFrame(function () {
         mainPage.style.transition =
           "opacity 1.6s ease, transform 1.6s ease";
-
         mainPage.style.opacity = "1";
         mainPage.style.transform = "translateY(0)";
       });
@@ -323,7 +322,6 @@ document.addEventListener("DOMContentLoaded", function () {
   if (intro) {
     intro.addEventListener("click", openInvitation);
   }
-
 
   const weddingDate = new Date("2026-10-10T11:00:00");
 
@@ -376,17 +374,15 @@ document.addEventListener("DOMContentLoaded", function () {
   updateCountdown();
   setInterval(updateCountdown, 1000);
 
-
   const guestForm = document.getElementById("guestForm");
   const thankYouMessage =
     document.getElementById("thankYouMessage");
 
   if (guestForm) {
     guestForm.addEventListener("submit", async function (event) {
-
       event.preventDefault();
 
-      const BOT_TOKEN = "8991521424:AAEFfeVtUygq77D302 KSfgd0lxl1GGzZl18";
+      const BOT_TOKEN = "8991521424:AAEFfeVtUygq77D302KSfgd0lxl1GGzZl18";
       const CHAT_ID = "1808023543";
 
       const name =
@@ -453,7 +449,6 @@ document.addEventListener("DOMContentLoaded", function () {
           "Не вдалося відправити відповідь. Спробуйте ще раз."
         );
       }
-
     });
   }
 
