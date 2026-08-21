@@ -265,6 +265,10 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
+  /* =========================
+     ОТКРЫТИЕ ПРИГЛАШЕНИЯ
+  ========================= */
+
   const intro = document.getElementById("intro");
   const mainPage = document.getElementById("mainPage");
   const music = document.getElementById("weddingMusic");
@@ -288,6 +292,7 @@ document.addEventListener("DOMContentLoaded", function () {
       requestAnimationFrame(function () {
         mainPage.style.transition =
           "opacity 1.6s ease, transform 1.6s ease";
+
         mainPage.style.opacity = "1";
         mainPage.style.transform = "translateY(0)";
       });
@@ -322,6 +327,11 @@ document.addEventListener("DOMContentLoaded", function () {
   if (intro) {
     intro.addEventListener("click", openInvitation);
   }
+
+
+  /* =========================
+     ТАЙМЕР
+  ========================= */
 
   const weddingDate = new Date("2026-10-10T11:00:00");
 
@@ -374,58 +384,96 @@ document.addEventListener("DOMContentLoaded", function () {
   updateCountdown();
   setInterval(updateCountdown, 1000);
 
+
+  /* =========================
+     АНКЕТА → TELEGRAM
+  ========================= */
+
   const guestForm = document.getElementById("guestForm");
   const thankYouMessage =
     document.getElementById("thankYouMessage");
 
   if (guestForm) {
-     // Анкета → Telegram
-    const guestForm = document.getElementById('guestForm');
-    const submitNote = document.getElementById('submitNote');
 
-    guestForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
+    guestForm.addEventListener("submit", async function (event) {
 
-      const name = document.getElementById('guestName').value.trim();
-      const count = document.getElementById('guestCount').value.trim();
-      const attendanceInput = document.querySelector('input[name="attendance"]:checked');
-      const attendance = attendanceInput ? attendanceInput.value : '';
+      event.preventDefault();
 
-      const message =
-`Новая анкета
-Имя: ${name || '-'}
-Будет: ${attendance || '-'}
-Количество: ${count || '-'}`;
+      const BOT_TOKEN = "ВСТАВЬ_СЮДА_НОВЫЙ_ТОКЕН_ИЗ_BOTFATHER";
+      const CHAT_ID = "1808023543";
+
+      const name =
+        document.getElementById("guestName").value.trim();
+
+      const attendanceInput =
+        document.querySelector(
+          'input[name="attendance"]:checked'
+        );
+
+      const attendance = attendanceInput
+        ? attendanceInput.value
+        : "Не вказано";
+
+      const guestCountElement =
+        document.getElementById("guestCount");
+
+      const count =
+        guestCountElement && guestCountElement.value
+          ? guestCountElement.value
+          : "Не вказано";
+
+      const message = `💍 Нова відповідь на весільну анкету
+
+👤 Ім’я: ${name}
+💌 Присутність: ${attendance}
+👥 Кількість гостей: ${count}`;
+
+      const url =
+        "https://api.telegram.org/bot" +
+        BOT_TOKEN +
+        "/sendMessage";
 
       try {
-        await fetch('https://api.telegram.org/bot8516218775:AAFz39TECTa2LTRbWymgGjWJ6nu5n308VXM/sendMessage', {
-          method: 'POST',
+
+        const response = await fetch(url, {
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json'
+            "Content-Type": "application/json"
           },
           body: JSON.stringify({
-            chat_id: '1808023543',
+            chat_id: CHAT_ID,
             text: message
           })
         });
 
-        submitNote.textContent = 'Дякую за вашу відповідь 💛';
-        guestForm.reset();
-      } catch (err) {
-        submitNote.textContent = 'Не удалось отправить ответ';
+        const result = await response.json();
+
+        if (!result.ok) {
+          throw new Error(
+            result.description || "Telegram error"
+          );
+        }
+
+        guestForm.style.display = "none";
+
+        if (thankYouMessage) {
+          thankYouMessage.hidden = false;
+        }
+
+      } catch (error) {
+
+        console.error(error);
+
+        alert(
+          "Помилка Telegram: " + error.message
+        );
+
       }
+
     });
-    const faders = document.querySelectorAll('.fade');
+  }
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    }
-  });
 });
-
-faders.forEach(el => observer.observe(el));
-  </script>
+</script>
 </body>
 </html>
